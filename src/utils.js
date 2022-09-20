@@ -23,9 +23,10 @@ const jalaaliConfigs = {
   selectedFormat: 'jYYYY/jMM/jDD',
   dateFormat: 'jYYYY/jMM/jDD',
   monthYearFormat: 'jYYYY jMM',
-  timeFormat: 'HH:mm ',
+  timeFormat: 'HH:mm:ss ',
   hour: 'ساعت',
   minute: 'دقیقه',
+  second: '',
   timeSelect: 'انتخاب',
   timeClose: 'بستن',
 };
@@ -49,9 +50,10 @@ const gregorianConfigs = {
   selectedFormat: 'YYYY/MM/DD',
   dateFormat: 'YYYY/MM/DD',
   monthYearFormat: 'YYYY MM',
-  timeFormat: 'HH:mm',
+  timeFormat: 'HH:mm:ss',
   hour: 'Hour',
   minute: 'Minute',
+  second: 'Second',
   timeSelect: 'Select',
   timeClose: 'Close',
 };
@@ -90,8 +92,8 @@ class utils {
     return isGregorian
       ? this.toEnglish(String(value))
       : String(value).replace(/[0-9]/g, (w) =>
-          String.fromCharCode(w.charCodeAt(0) + '۰'.charCodeAt(0) - 48),
-        );
+        String.fromCharCode(w.charCodeAt(0) + '۰'.charCodeAt(0) - 48),
+      );
   };
 
   toEnglish = (value) => {
